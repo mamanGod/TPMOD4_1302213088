@@ -22,21 +22,23 @@ public class doorMachine
 
         state state1 = state.terkunci;
         string[] kondisi = { "Pintu terkunci", "Pintu terbuka" };
+        
         while (state1 != null)
         {
             Console.WriteLine(kondisi[(int)state1]);
             Console.WriteLine();
             Console.WriteLine("Masukkan perintah: ");
-
             string perintah = Console.ReadLine();
+
+
             switch (state1)
             {
                 case state.terkunci:
-                    if (perintah == "Kunci pintu")
+                    if (perintah == "Dikunci")
                     {
                         state1 = state.terkunci;
                     }
-                    else if (perintah == "Buka pintu")
+                    else if (perintah == "Dibuka")
                     {
                         state1 = state.terbuka;
                     }
@@ -49,7 +51,7 @@ public class doorMachine
                     break;
 
                 case state.terbuka:
-                    if (perintah == "Kunci pintu")
+                    if (perintah == "Dikunci")
                     {
                         state1 = state.terkunci;
                     }
